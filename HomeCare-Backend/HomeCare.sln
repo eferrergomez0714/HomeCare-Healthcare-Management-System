@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37531.7 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeCare", "HomeCare.csproj", "{C19B865A-5F7D-45BE-ACFC-758F4EBE58BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C19B865A-5F7D-45BE-ACFC-758F4EBE58BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C19B865A-5F7D-45BE-ACFC-758F4EBE58BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C19B865A-5F7D-45BE-ACFC-758F4EBE58BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C19B865A-5F7D-45BE-ACFC-758F4EBE58BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E74E2BA-FBBC-44D4-8050-2276523054D2}
+	EndGlobalSection
+EndGlobal
