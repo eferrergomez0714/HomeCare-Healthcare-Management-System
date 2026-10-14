@@ -1,0 +1,408 @@
+/* =========================
+   Main Page
+   ========================= */
+
+.patients-container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 24px;
+  font-family: Arial, sans-serif;
+}
+
+
+/* =========================
+   Page Header
+   ========================= */
+
+.patients-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.patients-header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #222;
+}
+
+.patients-header p {
+  margin: 6px 0 0;
+  color: #666;
+  font-size: 15px;
+}
+
+
+/* =========================
+   General Buttons
+   ========================= */
+
+button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+button:hover {
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   Get Patients Button
+   ========================= */
+
+.get-patients-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.get-patients-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================
+   Add Patient Form
+   ========================= */
+
+.patient-form {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.patient-form h2 {
+  margin: 0 0 25px;
+  font-size: 20px;
+  color: #222;
+}
+
+
+/* Form Grid */
+
+.patient-form form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+
+/* Individual Form Field */
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 7px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding: 11px 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+
+/* Add Patient Button */
+
+.add-patient-btn {
+  grid-column: 1 / -1;
+
+  justify-self: start;
+
+  padding: 11px 20px;
+
+  background: #16a34a;
+  color: white;
+
+  border: none;
+  border-radius: 6px;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+.add-patient-btn:hover {
+  background: #15803d;
+}
+
+
+/* =========================
+   Search Section
+   ========================= */
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+
+  padding: 20px;
+
+  margin-bottom: 25px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-container input {
+  width: 300px;
+  box-sizing: border-box;
+
+  padding: 10px 12px;
+
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  outline: none;
+}
+
+.search-container input:focus {
+  border-color: #2563eb;
+
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+}
+
+.search-container button {
+  background: #2563eb;
+  color: white;
+}
+
+.search-container button:hover {
+  background: #1d4ed8;
+}
+
+
+/* =========================
+   Patient Count
+   ========================= */
+
+.patient-count {
+  margin: 0 0 18px;
+
+  color: #666;
+
+  font-size: 14px;
+}
+
+
+/* =========================
+   Patient Cards Grid
+   ========================= */
+
+.patients-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+
+/* =========================
+   Patient Card
+   ========================= */
+
+.patient-card {
+  display: flex;
+
+  align-items: flex-start;
+
+  gap: 16px;
+
+  padding: 20px;
+
+  background: white;
+
+  border: 1px solid #e5e7eb;
+
+  border-radius: 10px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.patient-card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================
+   Patient Avatar
+   ========================= */
+
+.patient-icon {
+  width: 50px;
+  height: 50px;
+
+  min-width: 50px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #e0e7ff;
+
+  color: #3730a3;
+
+  font-size: 20px;
+
+  font-weight: bold;
+}
+
+
+/* =========================
+   Patient Information
+   ========================= */
+
+.patient-info {
+  flex: 1;
+}
+
+.patient-info h2 {
+  margin: 0 0 12px;
+
+  font-size: 18px;
+
+  color: #222;
+}
+
+.patient-info p {
+  margin: 6px 0;
+
+  font-size: 14px;
+
+  color: #555;
+}
+
+.patient-info strong {
+  color: #333;
+}
+
+
+/* =========================
+   Responsive Design
+   ========================= */
+
+@media (max-width: 750px) {
+
+  .patients-container {
+    padding: 0 16px;
+  }
+
+  .patients-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+
+  /* One column form */
+
+  .patient-form form {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* One column patient cards */
+
+  .patients-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  /* Search */
+
+  .search-container {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .search-container input {
+    width: 100%;
+  }
+
+}
+
+/* =========================
+Update Patient Form
+========================= */
+
+.update-form {
+border-left: 4px solid #f59e0b;
+}
+
+.update-form h2 {
+color: #92400e;
+}
+
+.update-patient-btn {
+grid-column: 1 / -1;
+
+justify-self: start;
+
+padding: 11px 20px;
+
+background: #f59e0b;
+color: white;
+
+border: none;
+border-radius: 6px;
+
+font-size: 14px;
+font-weight: 600;
+
+cursor: pointer;
+}
+
+.update-patient-btn:hover {
+background: #d97706;
+}

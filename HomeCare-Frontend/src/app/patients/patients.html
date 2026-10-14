@@ -1,0 +1,278 @@
+<h1>Patients</h1>
+
+<button (click)="getPatients()">{{ showPatients ? 'Hide Patients' : 'Load Patients' }}</button>
+
+@if (showPatients) {
+    <ul>
+    @for (patient of patients; track patient.id) {
+        <li>
+        <p>Name: {{ patient.name }}</p>
+        <p>Email: {{ patient.email }}</p>
+        <p>City: {{ patient.city }}</p>
+        <p>Age: {{ patient.age }}</p>
+        </li>
+    }
+    </ul>
+}
+
+<!-- =========================
+     Add Patient
+     ========================= -->
+
+<div class="patient-form">
+
+  <h2>Add Patient</h2>
+
+  <form (ngSubmit)="createPatient()">
+
+<div class="form-group">
+  <label for="name">Name</label>
+  <input
+    id="name"
+    type="text"
+    [(ngModel)]="newPatient.name"
+    name="name"
+    required
+  >
+</div>
+
+<div class="form-group">
+  <label for="email">Email</label>
+  <input
+    id="email"
+    type="email"
+    [(ngModel)]="newPatient.email"
+    name="email"
+    required
+  >
+</div>
+
+<div class="form-group">
+  <label for="age">Age</label>
+  <input
+    id="age"
+    type="number"
+    [(ngModel)]="newPatient.age"
+    name="age"
+    required
+  >
+</div>
+
+<div class="form-group">
+  <label for="city">City</label>
+  <input
+    id="city"
+    type="text"
+    [(ngModel)]="newPatient.city"
+    name="city"
+    required
+  >
+</div>
+
+<button type="submit" class="add-patient-btn">
+  Add Patient
+</button>
+
+  </form>
+
+</div>
+
+<!-- =========================
+     Update Patient
+     ========================= -->
+
+<div class="patient-form update-form">
+
+  <h2>Update Patient</h2>
+
+  <form (ngSubmit)="updatePatient(updatePatientId)">
+
+<div class="form-group"> 
+    <label for="updatePatientId">Patient ID</label> 
+    <input 
+        id="updatePatientId" 
+        type="number" 
+        [(ngModel)]="updatePatientId" 
+        name="updatePatientId" 
+        required > </div>
+
+<div class="form-group">
+  <label for="updateName">Name</label>
+  <input
+    id="updateName"
+    type="text"
+    [(ngModel)]="newPatient.name"
+    name="updateName"
+    required
+  >
+</div>
+
+<div class="form-group">
+  <label for="updateEmail">Email</label>
+  <input
+    id="updateEmail"
+    type="email"
+    [(ngModel)]="newPatient.email"
+    name="updateEmail"
+    required
+  >
+</div>
+
+<div class="form-group">
+  <label for="updateAge">Age</label>
+  <input
+    id="updateAge"
+    type="number"
+    [(ngModel)]="newPatient.age"
+    name="updateAge"
+    required
+  >
+</div>
+
+<div class="form-group">
+  <label for="updateCity">City</label>
+  <input
+    id="updateCity"
+    type="text"
+    [(ngModel)]="newPatient.city"
+    name="updateCity"
+    required
+  >
+</div>
+
+<button type="submit" class="update-patient-btn">
+  Update Patient
+</button>
+```
+
+  </form>
+
+</div>
+
+<!-- =========================
+     Search by Name
+     ========================= -->
+
+<div class="search-container">
+
+  <h2>Search Patients</h2>
+
+<input
+type="text"
+placeholder="Search patient by name"
+[(ngModel)]="searchName"
+name="searchName"
+
+>
+
+<button
+type="button"
+(click)="searchPatients()">
+Search </button>
+
+</div>
+
+<!-- =========================
+     Search by Age
+     ========================= -->
+
+<div class="search-container">
+
+  <h2>Search Patients by Age</h2>
+
+<input
+type="number"
+placeholder="Enter age"
+[(ngModel)]="searchAge"
+name="searchAge"
+
+>
+
+<button
+type="button"
+(click)="searchPatientsByAge()">
+Search by Age </button>
+
+</div>
+
+<!-- =========================
+     Delete Patient
+     ========================= -->
+
+<div class="search-container">
+
+  <h2>Delete Patient</h2>
+
+  <input
+    type="number"
+    placeholder="Enter ID of patient to delete"
+    [(ngModel)]="deletePatientId"
+    name="deletePatientId">
+
+    <button
+    type="button"
+    (click)="deletePatient(deletePatientId)">
+    Delete Patient </button>
+
+</div>
+
+
+<!-- =========================
+     Medical Records
+     ========================= -->
+
+<div class="search-container">
+
+  <h2>Get Medical Records</h2>
+
+  <input
+    type="number"
+    placeholder="Enter Patient ID"
+    [(ngModel)]="medicalRecordsPatientId"
+    name="medicalRecordsPatientId">
+
+  <button
+    type="button"
+    (click)="getMedicalRecords()">
+    Get Medical Records
+  </button>
+
+</div>
+
+@if (medicalRecords) {
+
+  <div class="medical-records">
+
+    <h2>Medical Records</h2>
+
+    <p>Patient SSN: {{ medicalRecords.ssn }}</p>
+
+    @if (medicalRecords.medicalRecords.length > 0) {
+
+      <ul>
+
+        @for (record of medicalRecords.medicalRecords; track record.blobName) {
+
+          <li>
+            {{ record.fileName }}
+
+            <button
+              type="button"
+              (click)="openMedicalRecord(record.url)">
+              Open
+            </button>
+          </li>
+
+        }
+
+      </ul>
+
+    } @else {
+
+      <p>No medical records found.</p>
+
+    }
+
+  </div>
+
+}

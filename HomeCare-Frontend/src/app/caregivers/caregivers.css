@@ -1,0 +1,142 @@
+/* Main page */
+:host {
+display: block;
+max-width: 1000px;
+margin: 0 auto;
+padding: 30px;
+font-family: Arial, sans-serif;
+}
+
+/* Page title */
+h1 {
+text-align: center;
+margin-bottom: 25px;
+font-size: 32px;
+}
+
+/* Load CareGivers button */
+button {
+padding: 10px 20px;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+font-size: 15px;
+background-color: #1976d2;
+color: white;
+}
+
+button:hover {
+background-color: #125ca1;
+}
+
+/* Caregiver list */
+ul {
+list-style: none;
+padding: 0;
+margin: 25px 0;
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 20px;
+}
+
+/* Individual caregiver card */
+li {
+background-color: #ffffff;
+border: 1px solid #ddd;
+border-radius: 10px;
+padding: 20px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Caregiver name */
+li p:first-child {
+font-size: 20px;
+font-weight: bold;
+margin-top: 0;
+margin-bottom: 15px;
+}
+
+/* Caregiver information */
+li p {
+margin: 8px 0;
+color: #444;
+}
+
+/* Add caregiver form */
+.caregiver-form {
+margin-top: 40px;
+padding: 25px;
+background-color: #f7f7f7;
+border-radius: 10px;
+border: 1px solid #ddd;
+}
+
+/* Form title */
+.caregiver-form h2 {
+margin-top: 0;
+margin-bottom: 25px;
+}
+
+/* Form groups */
+.form-group {
+display: flex;
+flex-direction: column;
+margin-bottom: 18px;
+}
+
+/* Labels */
+.form-group label {
+font-weight: bold;
+margin-bottom: 7px;
+}
+
+/* Inputs */
+.form-group input {
+padding: 11px;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-size: 15px;
+box-sizing: border-box;
+}
+
+/* Input focus */
+.form-group input:focus {
+outline: none;
+border-color: #1976d2;
+box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.15);
+}
+
+/* Add caregiver button */
+.add-caregiver-btn {
+margin-top: 5px;
+background-color: #2e7d32;
+}
+
+.add-caregiver-btn:hover {
+background-color: #1b5e20;
+}
+
+/* Search section */
+.search-container {
+margin-top: 30px;
+padding: 25px;
+border-radius: 10px;
+border: 1px solid #ddd;
+background-color: #f7f7f7;
+}
+
+/* Mobile layout */
+@media (max-width: 600px) {
+:host {
+padding: 15px;
+}
+
+ul {
+grid-template-columns: 1fr;
+}
+
+.caregiver-form,
+.search-container {
+padding: 18px;
+}
+}
